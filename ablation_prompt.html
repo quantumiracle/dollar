@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ablation Study</title>
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://quantumiracle.github.io/dollar/">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">
+            DOLLAR: Few-Step Video Generation via Distillation and Latent Reward Optimization
+          </h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Ablation Study</h2>
+        <p class="subtitle is-5" style="margin-bottom: 0.5rem;">Prompt Length (VBench)</p>
+        <p> VBench incorporates the prompt optimization technique introduced in <a href="https://github.com/THUDM/CogVideo">CogVideoX</a>, 
+          which utilizes GPT-4o to extend the short prompts into more descriptive 
+          "long prompts" while preserving their original meanings. 
+          We refer to these as "long prompts", distinguishing them from the original "short prompts". 
+          The visualization of video samples generated with short and long promtps are compared below.
+          With longer prompts, the text-video alignment, understanding of object relationships, and depiction of motion are generally more robust and accurate.</p> 
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ablation  steps -->
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <h3 class="title is-3">Short Prompt</h3>
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item">
+          <video poster="" autoplay controls muted loop playsinline height="100%" aria-label="VSD: 4 steps">
+            <source src="./static/videos/prompt_length/short_prompt/a laptop, frozen in time-0.mp4" type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">a laptop, frozen in time</h2>
+        </div>
+        <div class="item">
+          <video poster="" autoplay controls muted loop playsinline height="100%" aria-label="VSD: 4 steps">
+            <source src="./static/videos/prompt_length/short_prompt/A person is baby waking up-3.mp4" type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">A person is baby waking up</h2>
+        </div>
+        <div class="item">
+          <video poster="" autoplay controls muted loop playsinline height="100%" aria-label="VSD: 4 steps">
+            <source src="./static/videos/prompt_length/short_prompt/broccoli and a backpack-2.mp4" type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">broccoli and a backpack</h2>
+        </div>
+        <div class="item">
+          <video poster="" autoplay controls muted loop playsinline height="100%" aria-label="VSD: 4 steps">
+            <source src="./static/videos/prompt_length/short_prompt/In a still frame, a pear-0.mp4" type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">In a still frame, a pear</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <h3 class="title is-3">Long Prompt      </h3>
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item">
+          <video poster="" autoplay controls muted loop playsinline height="100%" aria-label="VSD: 4 steps">
+            <source src="./static/videos/prompt_length/long_prompt/a laptop, frozen in time-0.mp4" type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">A sleek, modern laptop, its screen displaying a vibrant, paused scene, sits on a minimalist wooden desk. The room is bathed in soft, natural light filtering through sheer curtains, casting gentle shadows. The laptop's keyboard is mid-illumination, with a faint glow emanating from the keys, suggesting a moment frozen in time. Dust particles are suspended in the air, caught in the light, adding to the stillness. A steaming cup of coffee beside the laptop remains untouched, with wisps of steam frozen in mid-air. The scene captures a serene, almost magical pause in an otherwise bustling workspace.
+          </h2>
+        </div>
+        <div class="item">
+          <video poster="" autoplay controls muted loop playsinline height="100%" aria-label="VSD: 4 steps">
+            <source src="./static/videos/prompt_length/long_prompt/A person is baby waking up-0.mp4" type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">A serene nursery bathed in soft morning light reveals a cozy crib with pastel-colored bedding. A baby, dressed in a cute onesie adorned with tiny stars, stirs gently. The camera captures the baby's delicate eyelashes fluttering open, revealing curious, sleepy eyes. The baby stretches tiny arms and legs, yawning adorably. A mobile with soft, plush animals gently spins above, casting playful shadows. The room is filled with the soft hum of a lullaby, creating a peaceful atmosphere as the baby slowly awakens, ready to greet the new day with innocent wonder.
+          </h2>
+        </div>
+        <div class="item">
+          <video poster="" autoplay controls muted loop playsinline height="100%" aria-label="VSD: 4 steps">
+            <source src="./static/videos/prompt_length/long_prompt/broccoli and a backpack-1.mp4" type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">A vibrant green broccoli floret sits atop a rustic wooden table, its fresh, crisp texture highlighted by the natural light streaming in from a nearby window. Beside it, a well-worn, navy blue backpack with leather straps and multiple pockets rests casually, suggesting a journey or adventure. The scene shifts to a close-up of the broccoli, emphasizing its intricate details and healthy appeal. Then, the camera pans to the backpack, showcasing its sturdy build and practical design. Finally, the two items are framed together, symbolizing a blend of nourishment and exploration, set against a backdrop of a cozy, sunlit room.
+          </h2>
+        </div>
+        <div class="item">
+          <video poster="" autoplay controls muted loop playsinline height="100%" aria-label="VSD: 4 steps">
+            <source src="./static/videos/prompt_length/long_prompt/In a still frame, a pear-1.mp4" type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">A single, perfectly ripe pear rests on a rustic wooden table, its golden-green skin glistening under soft, natural light. The pear's surface is dotted with tiny, delicate freckles, and its curved stem casts a gentle shadow. The background is a blurred, warm-toned kitchen scene, with hints of vintage decor and a window letting in a soft, diffused glow. The stillness of the frame captures the pear's natural beauty and simplicity, evoking a sense of calm and timelessness.
+          </h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>

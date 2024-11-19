@@ -1,0 +1,1840 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ablation Study</title>
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://quantumiracle.github.io/dollar/">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">
+            DOLLAR: Few-Step Video Generation via Distillation and Latent Reward Optimization
+          </h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Ablation Study</h2>
+        <p class="subtitle is-5" style="margin-bottom: 0.5rem;">Method Comparison:</p>
+        <ul class="subtitle is-5" style="list-style-type: disc; display: inline-block; text-align: left; margin-top: 0;">
+          <li>VSD</li>
+          <li>VSD + CD</li>
+          <li>VSD + DDPO</li>
+          <li>VSD + LRM</li>
+          <li>VSD + CD + LRM</li>
+          <li>Teacher</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ablation method 0 -->
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <h3 class="title is-3">A slow cinematic push in on an ostrich standing in a 1980s kitchen.</h3>
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item">
+          <video poster="" autoplay controls muted loop playsinline height="100%" aria-label="VSD: 4 steps">
+            <source src="./static/videos/ablation_methods/vsd/vsd_prompt6_1.mp4" type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">VSD: 4 steps</h2>
+        </div>
+        <div class="item">
+          <video poster="" autoplay controls muted loop playsinline height="100%" aria-label="VSD: 4 steps">
+            <source src="./static/videos/ablation_methods/vsd/vsd_prompt6_2.mp4" type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">VSD: 4 steps</h2>
+        </div>
+        <div class="item">
+          <video poster="" autoplay controls muted loop playsinline height="100%" aria-label="VSD: 4 steps">
+            <source src="./static/videos/ablation_methods/vsd/vsd_prompt6_3.mp4" type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">VSD: 4 steps</h2>
+        </div>
+        <div class="item">
+          <video poster="" autoplay controls muted loop playsinline height="100%" aria-label="VSD: 4 steps">
+            <source src="./static/videos/ablation_methods/vsd/vsd_prompt6_4.mp4" type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">VSD: 4 steps</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/vsd+cd/vsd+cd_prompt6_1.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            VSD+CD: 4 steps
+        </h2>
+        </div>
+        <div class="item item-chair-tp">
+          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/vsd+cd/vsd+cd_prompt6_2.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            VSD+CD: 4 steps
+        </h2>
+        </div>
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/vsd+cd/vsd+cd_prompt6_3.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            VSD+CD: 4 steps
+        </h2>
+        </div>
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/vsd+cd/vsd+cd_prompt6_4.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            VSD+CD: 4 steps
+        </h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/vsd+ddpo_hps/row_6_col_0_(6).mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            VSD+DDPO (HPSv2): 4 steps
+        </h2>
+        </div>
+        <div class="item item-chair-tp">
+          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/vsd+ddpo_hps/row_6_col_1_(5).mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            VSD+DDPO (HPSv2): 4 steps
+        </h2>
+        </div>
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/vsd+ddpo_hps/row_6_col_3_(6).mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            VSD+DDPO (HPSv2): 4 steps
+        </h2>
+        </div>
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/vsd+ddpo_hps/row_6_col_4_(5).mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            VSD+DDPO (HPSv2): 4 steps
+        </h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/vsd+lrm_hps/vsd+lrm_prompt6_1.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            VSD+LRM (HPSv2): 4 steps
+        </h2>
+        </div>
+        <div class="item item-chair-tp">
+          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/vsd+lrm_hps/vsd+lrm_prompt6_2.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            VSD+LRM (HPSv2): 4 steps
+        </h2>
+        </div>
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/vsd+lrm_hps/vsd+lrm_prompt6_3.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            VSD+LRM (HPSv2): 4 steps
+        </h2>
+        </div>
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/vsd+lrm_hps/vsd+lrm_prompt6_4.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            VSD+LRM (HPSv2): 4 steps
+        </h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/vsd+lrm_hps/vsd+lrm_prompt6_1.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            VSD+CD+LRM (HPSv2): 4 steps
+        </h2>
+        </div>
+        <div class="item item-chair-tp">
+          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/vsd+lrm_hps/vsd+lrm_prompt6_2.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            VSD+CD+LRM (HPSv2): 4 steps
+        </h2>
+        </div>
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/vsd+lrm_hps/vsd+lrm_prompt6_3.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            VSD+CD+LRM (HPSv2): 4 steps
+        </h2>
+        </div>
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/vsd+lrm_hps/vsd+lrm_prompt6_4.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            VSD+CD+LRM (HPSv2): 4 steps
+        </h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/vsd+ddpo_pick/row_6_col_0_(5).mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            VSD+DDPO (PickScore): 4 steps
+        </h2>
+        </div>
+        <div class="item item-chair-tp">
+          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/vsd+ddpo_pick/row_6_col_1_(4).mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            VSD+DDPO (PickScore): 4 steps
+        </h2>
+        </div>
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/vsd+ddpo_pick/row_6_col_2_(3).mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            VSD+DDPO (PickScore): 4 steps
+        </h2>
+        </div>
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/vsd+ddpo_pick/row_6_col_3_(5).mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            VSD+DDPO (PickScore): 4 steps
+        </h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/vsd+lrm_pick/vsd+lrm_pick_prompt6_1.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            VSD+LRM (PickScore): 4 steps
+        </h2>
+        </div>
+        <div class="item item-chair-tp">
+          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/vsd+lrm_pick/vsd+lrm_pick_prompt6_2.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            VSD+LRM (PickScore): 4 steps
+        </h2>
+        </div>
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/vsd+lrm_pick/vsd+lrm_pick_prompt6_3.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            VSD+LRM (PickScore): 4 steps
+        </h2>
+        </div>
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/vsd+lrm_pick/vsd+lrm_pick_prompt6_4.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            VSD+LRM (PickScore): 4 steps
+        </h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/vsd+cd+lrm_pick/row_6_col_0_(7).mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            VSD+CD+LRM (PickScore): 4 steps
+        </h2>
+        </div>
+        <div class="item item-chair-tp">
+          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/vsd+cd+lrm_pick/row_6_col_1_(6).mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            VSD+CD+LRM (PickScore): 4 steps
+        </h2>
+        </div>
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/vsd+cd+lrm_pick/row_6_col_3_(7).mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            VSD+CD+LRM (PickScore): 4 steps
+        </h2>
+        </div>
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/vsd+cd+lrm_pick/row_6_col_4_(6).mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            VSD+CD+LRM (PickScore): 4 steps
+        </h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/teacher/A_slow_cinematic_push_in_on_an_ostrich_standing_in_a_1980s_kitchen.-0.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            Teacher: DDIM 50 steps
+        </h2>
+        </div>
+        <div class="item item-chair-tp">
+          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/teacher/A_slow_cinematic_push_in_on_an_ostrich_standing_in_a_1980s_kitchen.-1.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            Teacher: DDIM 50 steps
+        </h2>
+        </div>
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/teacher/A_slow_cinematic_push_in_on_an_ostrich_standing_in_a_1980s_kitchen.-2.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            Teacher: DDIM 50 steps
+        </h2>
+        </div>
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/teacher/A_slow_cinematic_push_in_on_an_ostrich_standing_in_a_1980s_kitchen.-3.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            Teacher: DDIM 50 steps
+        </h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/infer_steps/teacher4/row_6_col_0_(4).mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            Teacher: DDIM 4 steps
+        </h2>
+        </div>
+        <div class="item item-chair-tp">
+          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/infer_steps/teacher4/row_6_col_3_(4).mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            Teacher: DDIM 4 steps
+        </h2>
+        </div>
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/infer_steps/teacher4/row_6_col_4_(4).mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            Teacher: DDIM 4 steps
+        </h2>
+        </div>
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/infer_steps/teacher4/row_6_col_5_(2).mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            Teacher: DDIM 4 steps
+        </h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ablation method 1 -->
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <h3 class="title is-3">A middle-aged sad bald man becomes happy as a wig of curly hair and sunglasses fall suddenly on his head.</h3>
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/vsd/vsd_prompt7_1.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            VSD: 4 steps
+        </h2>
+        </div>
+        <div class="item item-chair-tp">
+          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/vsd/vsd_prompt7_3.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            VSD: 4 steps
+        </h2>
+        </div>
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/vsd/vsd_prompt7_4.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            VSD: 4 steps
+        </h2>
+        </div>
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/vsd/vsd_prompt7_7.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            VSD: 4 steps
+        </h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/vsd+cd/vsd+cd_prompt7_1.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            VSD+CD: 4 steps
+        </h2>
+        </div>
+        <div class="item item-chair-tp">
+          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/vsd+cd/vsd+cd_prompt7_4.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            VSD+CD: 4 steps
+        </h2>
+        </div>
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/vsd+cd/vsd+cd_prompt7_7.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            VSD+CD: 4 steps
+        </h2>
+        </div>
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/vsd+cd/vsd+cd_prompt7_8.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            VSD+CD: 4 steps
+        </h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/vsd+ddpo_hps/row_7_col_2_(6).mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            VSD+DDPO (HPSv2): 4 steps
+        </h2>
+        </div>
+        <div class="item item-chair-tp">
+          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/vsd+ddpo_hps/row_7_col_3_(3).mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            VSD+DDPO (HPSv2): 4 steps
+        </h2>
+        </div>
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/vsd+ddpo_hps/row_7_col_4_(4).mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            VSD+DDPO (HPSv2): 4 steps
+        </h2>
+        </div>
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/vsd+ddpo_hps/row_7_col_6_(2).mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            VSD+DDPO (HPSv2): 4 steps
+        </h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/vsd+lrm_hps/vsd+lrm_prompt7_1.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            VSD+LRM (HPSv2): 4 steps
+        </h2>
+        </div>
+        <div class="item item-chair-tp">
+          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/vsd+lrm_hps/vsd+lrm_prompt7_2.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            VSD+LRM (HPSv2): 4 steps
+        </h2>
+        </div>
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/vsd+lrm_hps/vsd+lrm_prompt7_3.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            VSD+LRM (HPSv2): 4 steps
+        </h2>
+        </div>
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/vsd+lrm_hps/vsd+lrm_prompt7_4.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            VSD+LRM (HPSv2): 4 steps
+        </h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/vsd+lrm_hps/vsd+lrm_prompt6_1.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            VSD+CD+LRM (HPSv2): 4 steps
+        </h2>
+        </div>
+        <div class="item item-chair-tp">
+          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/vsd+lrm_hps/vsd+lrm_prompt6_2.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            VSD+CD+LRM (HPSv2): 4 steps
+        </h2>
+        </div>
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/vsd+lrm_hps/vsd+lrm_prompt6_3.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            VSD+CD+LRM (HPSv2): 4 steps
+        </h2>
+        </div>
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/vsd+lrm_hps/vsd+lrm_prompt6_4.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            VSD+CD+LRM (HPSv2): 4 steps
+        </h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/vsd+ddpo_pick/row_7_col_0_(4).mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            VSD+DDPO (PickScore): 4 steps
+        </h2>
+        </div>
+        <div class="item item-chair-tp">
+          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/vsd+ddpo_pick/row_7_col_1_(3).mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            VSD+DDPO (PickScore): 4 steps
+        </h2>
+        </div>
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/vsd+ddpo_pick/row_7_col_2_(5).mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            VSD+DDPO (PickScore): 4 steps
+        </h2>
+        </div>
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/vsd+ddpo_pick/row_7_col_4_(3).mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            VSD+DDPO (PickScore): 4 steps
+        </h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/vsd+lrm_pick/vsd+lrm_pick_prompt7_1.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            VSD+LRM (PickScore): 4 steps
+        </h2>
+        </div>
+        <div class="item item-chair-tp">
+          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/vsd+lrm_pick/vsd+lrm_pick_prompt7_2.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            VSD+LRM (PickScore): 4 steps
+        </h2>
+        </div>
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/vsd+lrm_pick/vsd+lrm_pick_prompt7_3.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            VSD+LRM (PickScore): 4 steps
+        </h2>
+        </div>
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/vsd+lrm_pick/vsd+lrm_pick_prompt7_4.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            VSD+LRM (PickScore): 4 steps
+        </h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/vsd+cd+lrm_pick/row_7_col_1_(4).mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            VSD+CD+LRM (PickScore): 4 steps
+        </h2>
+        </div>
+        <div class="item item-chair-tp">
+          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/vsd+cd+lrm_pick/row_7_col_3_(4).mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            VSD+CD+LRM (PickScore): 4 steps
+        </h2>
+        </div>
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/vsd+cd+lrm_pick/row_7_col_4_(5).mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            VSD+CD+LRM (PickScore): 4 steps
+        </h2>
+        </div>
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/vsd+cd+lrm_pick/row_7_col_5_(3).mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            VSD+CD+LRM (PickScore): 4 steps
+        </h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/teacher/A_middle-aged_sad_bald_man_becomes_happy_as_a_wig_of_curly_hair_and_sunglasses_fall_suddenly_on_his_head.-0.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            Teacher: DDIM 50 steps
+        </h2>
+        </div>
+        <div class="item item-chair-tp">
+          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/teacher/A_middle-aged_sad_bald_man_becomes_happy_as_a_wig_of_curly_hair_and_sunglasses_fall_suddenly_on_his_head.-1.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            Teacher: DDIM 50 steps
+        </h2>
+        </div>
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/teacher/A_middle-aged_sad_bald_man_becomes_happy_as_a_wig_of_curly_hair_and_sunglasses_fall_suddenly_on_his_head.-2.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            Teacher: DDIM 50 steps
+        </h2>
+        </div>
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/teacher/A_middle-aged_sad_bald_man_becomes_happy_as_a_wig_of_curly_hair_and_sunglasses_fall_suddenly_on_his_head.-3.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            Teacher: DDIM 50 steps
+        </h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/infer_steps/teacher4/row_7_col_0_(3).mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            Teacher: DDIM 4 steps
+        </h2>
+        </div>
+        <div class="item item-chair-tp">
+          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/infer_steps/teacher4/row_7_col_2_(4).mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            Teacher: DDIM 4 steps
+        </h2>
+        </div>
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/infer_steps/teacher4/row_7_col_3_(2).mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            Teacher: DDIM 4 steps
+        </h2>
+        </div>
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/infer_steps/teacher4/row_7_col_4_(2).mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            Teacher: DDIM 4 steps
+        </h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ablation method 2 -->
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <h3 class="title is-3">Handheld camera moving fast, flashlight light, in a white old wall in a old alley at night a black graffiti that spells "Cool Baby".</h3>
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/vsd/vsd_prompt10_1.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            VSD: 4 steps
+        </h2>
+        </div>
+        <div class="item item-chair-tp">
+          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/vsd/vsd_prompt10_2.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            VSD: 4 steps
+        </h2>
+        </div>
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/vsd/vsd_prompt10_3.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            VSD: 4 steps
+        </h2>
+        </div>
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/vsd/vsd_prompt10_4.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            VSD: 4 steps
+        </h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/vsd+cd/vsd+cd_prompt10_1.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            VSD+CD: 4 steps
+        </h2>
+        </div>
+        <div class="item item-chair-tp">
+          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/vsd+cd/vsd+cd_prompt10_2.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            VSD+CD: 4 steps
+        </h2>
+        </div>
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/vsd+cd/vsd+cd_prompt10_3.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            VSD+CD: 4 steps
+        </h2>
+        </div>
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/vsd+cd/vsd+cd_prompt10_4.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            VSD+CD: 4 steps
+        </h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/vsd+ddpo_hps/row_10_col_0_(3).mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            VSD+DDPO (HPSv2): 4 steps
+        </h2>
+        </div>
+        <div class="item item-chair-tp">
+          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/vsd+ddpo_hps/row_10_col_2_(7).mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            VSD+DDPO (HPSv2): 4 steps
+        </h2>
+        </div>
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/vsd+ddpo_hps/row_10_col_3_(6).mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            VSD+DDPO (HPSv2): 4 steps
+        </h2>
+        </div>
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/vsd+ddpo_hps/row_10_col_6_(2).mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            VSD+DDPO (HPSv2): 4 steps
+        </h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/vsd+lrm_hps/vsd+lrm_prompt10_1.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            VSD+LRM (HPSv2): 4 steps
+        </h2>
+        </div>
+        <div class="item item-chair-tp">
+          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/vsd+lrm_hps/vsd+lrm_prompt10_2.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            VSD+LRM (HPSv2): 4 steps
+        </h2>
+        </div>
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/vsd+lrm_hps/vsd+lrm_prompt10_3.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            VSD+LRM (HPSv2): 4 steps
+        </h2>
+        </div>
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/vsd+lrm_hps/vsd+lrm_prompt10_4.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            VSD+LRM (HPSv2): 4 steps
+        </h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/vsd+lrm_hps/vsd+lrm_prompt6_1.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            VSD+CD+LRM (HPSv2): 4 steps
+        </h2>
+        </div>
+        <div class="item item-chair-tp">
+          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/vsd+lrm_hps/vsd+lrm_prompt6_2.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            VSD+CD+LRM (HPSv2): 4 steps
+        </h2>
+        </div>
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/vsd+lrm_hps/vsd+lrm_prompt6_3.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            VSD+CD+LRM (HPSv2): 4 steps
+        </h2>
+        </div>
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/vsd+lrm_hps/vsd+lrm_prompt6_4.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            VSD+CD+LRM (HPSv2): 4 steps
+        </h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/vsd+ddpo_pick/row_10_col_0_(2).mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            VSD+DDPO (PickScore): 4 steps
+        </h2>
+        </div>
+        <div class="item item-chair-tp">
+          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/vsd+ddpo_pick/row_10_col_2_(6).mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            VSD+DDPO (PickScore): 4 steps
+        </h2>
+        </div>
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/vsd+ddpo_pick/row_10_col_4_(3).mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            VSD+DDPO (PickScore): 4 steps
+        </h2>
+        </div>
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/vsd+ddpo_pick/row_10_col_6_(1).mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            VSD+DDPO (PickScore): 4 steps
+        </h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/vsd+lrm_pick/vsd+lrm_pick_prompt10_1.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            VSD+LRM (PickScore): 4 steps
+        </h2>
+        </div>
+        <div class="item item-chair-tp">
+          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/vsd+lrm_pick/vsd+lrm_pick_prompt10_2.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            VSD+LRM (PickScore): 4 steps
+        </h2>
+        </div>
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/vsd+lrm_pick/vsd+lrm_pick_prompt10_3.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            VSD+LRM (PickScore): 4 steps
+        </h2>
+        </div>
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/vsd+lrm_pick/vsd+lrm_pick_prompt10_4.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            VSD+LRM (PickScore): 4 steps
+        </h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/vsd+cd+lrm_pick/row_10_col_1_(1).mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            VSD+CD+LRM (PickScore): 4 steps
+        </h2>
+        </div>
+        <div class="item item-chair-tp">
+          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/vsd+cd+lrm_pick/row_10_col_2_(8).mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            VSD+CD+LRM (PickScore): 4 steps
+        </h2>
+        </div>
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/vsd+cd+lrm_pick/row_10_col_5_(4).mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            VSD+CD+LRM (PickScore): 4 steps
+        </h2>
+        </div>
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/vsd+cd+lrm_pick/row_10_col_6_(3).mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            VSD+CD+LRM (PickScore): 4 steps
+        </h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/teacher/Handheld_camera_moving_fast,_flashlight_light,_in_a_white_old_wall_in_a_old_alley_at_night_a_black_graffiti_that_spells__Cool_Baby_.-0.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            Teacher: DDIM 50 steps
+        </h2>
+        </div>
+        <div class="item item-chair-tp">
+          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/teacher/Handheld_camera_moving_fast,_flashlight_light,_in_a_white_old_wall_in_a_old_alley_at_night_a_black_graffiti_that_spells__Cool_Baby_.-1.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            Teacher: DDIM 50 steps
+        </h2>
+        </div>
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/teacher/Handheld_camera_moving_fast,_flashlight_light,_in_a_white_old_wall_in_a_old_alley_at_night_a_black_graffiti_that_spells__Cool_Baby_.-2.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            Teacher: DDIM 50 steps
+        </h2>
+        </div>
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/teacher/Handheld_camera_moving_fast,_flashlight_light,_in_a_white_old_wall_in_a_old_alley_at_night_a_black_graffiti_that_spells__Cool_Baby_.-4.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            Teacher: DDIM 50 steps
+        </h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/infer_steps/teacher4/row_10_col_0_(1).mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            Teacher: DDIM 4 steps
+        </h2>
+        </div>
+        <div class="item item-chair-tp">
+          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/infer_steps/teacher4/row_10_col_1.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            Teacher: DDIM 4 steps
+        </h2>
+        </div>
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/infer_steps/teacher4/row_10_col_2_(5).mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            Teacher: DDIM 4 steps
+        </h2>
+        </div>
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/infer_steps/teacher4/row_10_col_3_(5).mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            Teacher: DDIM 4 steps
+        </h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ablation method 3 -->
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <h3 class="title is-3">A slow cinematic push in on an ostrich standing in a 1980s kitchen.</h3>
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/vsd/vsd_prompt11_1.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            VSD: 4 steps
+        </h2>
+        </div>
+        <div class="item item-chair-tp">
+          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/vsd/vsd_prompt11_2.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            VSD: 4 steps
+        </h2>
+        </div>
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/vsd/vsd_prompt11_3.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            VSD: 4 steps
+        </h2>
+        </div>
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/vsd/vsd_prompt11_4.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            VSD: 4 steps
+        </h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/vsd+cd/vsd+cd_prompt11_1.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            VSD+CD: 4 steps
+        </h2>
+        </div>
+        <div class="item item-chair-tp">
+          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/vsd+cd/vsd+cd_prompt11_2.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            VSD+CD: 4 steps
+        </h2>
+        </div>
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/vsd+cd/vsd+cd_prompt11_3.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            VSD+CD: 4 steps
+        </h2>
+        </div>
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/vsd+cd/vsd+cd_prompt11_4.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            VSD+CD: 4 steps
+        </h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/vsd+ddpo_hps/row_11_col_0_(3).mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            VSD+DDPO (HPSv2): 4 steps
+        </h2>
+        </div>
+        <div class="item item-chair-tp">
+          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/vsd+ddpo_hps/row_11_col_1_(5).mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            VSD+DDPO (HPSv2): 4 steps
+        </h2>
+        </div>
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/vsd+ddpo_hps/row_11_col_2_(6).mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            VSD+DDPO (HPSv2): 4 steps
+        </h2>
+        </div>
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/vsd+ddpo_hps/row_11_col_3_(6).mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            VSD+DDPO (HPSv2): 4 steps
+        </h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/vsd+lrm_hps/vsd+lrm_prompt11_1.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            VSD+LRM (HPSv2): 4 steps
+        </h2>
+        </div>
+        <div class="item item-chair-tp">
+          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/vsd+lrm_hps/vsd+lrm_prompt11_2.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            VSD+LRM (HPSv2): 4 steps
+        </h2>
+        </div>
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/vsd+lrm_hps/vsd+lrm_prompt11_3.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            VSD+LRM (HPSv2): 4 steps
+        </h2>
+        </div>
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/vsd+lrm_hps/vsd+lrm_prompt11_4.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            VSD+LRM (HPSv2): 4 steps
+        </h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/vsd+lrm_hps/vsd+lrm_prompt6_1.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            VSD+CD+LRM (HPSv2): 4 steps
+        </h2>
+        </div>
+        <div class="item item-chair-tp">
+          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/vsd+lrm_hps/vsd+lrm_prompt6_2.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            VSD+CD+LRM (HPSv2): 4 steps
+        </h2>
+        </div>
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/vsd+lrm_hps/vsd+lrm_prompt6_3.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            VSD+CD+LRM (HPSv2): 4 steps
+        </h2>
+        </div>
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/vsd+lrm_hps/vsd+lrm_prompt6_4.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            VSD+CD+LRM (HPSv2): 4 steps
+        </h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/vsd+ddpo_pick/row_11_col_0_(2).mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            VSD+DDPO (PickScore): 4 steps
+        </h2>
+        </div>
+        <div class="item item-chair-tp">
+          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/vsd+ddpo_pick/row_11_col_1_(4).mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            VSD+DDPO (PickScore): 4 steps
+        </h2>
+        </div>
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/vsd+ddpo_pick/row_11_col_2_(5).mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            VSD+DDPO (PickScore): 4 steps
+        </h2>
+        </div>
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/vsd+ddpo_pick/row_11_col_3_(5).mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            VSD+DDPO (PickScore): 4 steps
+        </h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/vsd+lrm_pick/vsd+lrm_pick_prompt11_1.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            VSD+LRM (PickScore): 4 steps
+        </h2>
+        </div>
+        <div class="item item-chair-tp">
+          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/vsd+lrm_pick/vsd+lrm_pick_prompt11_2.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            VSD+LRM (PickScore): 4 steps
+        </h2>
+        </div>
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/vsd+lrm_pick/vsd+lrm_pick_prompt11_3.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            VSD+LRM (PickScore): 4 steps
+        </h2>
+        </div>
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/vsd+lrm_pick/vsd+lrm_pick_prompt11_4.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            VSD+LRM (PickScore): 4 steps
+        </h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/vsd+cd+lrm_pick/row_11_col_0_(4).mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            VSD+CD+LRM (PickScore): 4 steps
+        </h2>
+        </div>
+        <div class="item item-chair-tp">
+          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/vsd+cd+lrm_pick/row_11_col_1_(6).mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            VSD+CD+LRM (PickScore): 4 steps
+        </h2>
+        </div>
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/vsd+cd+lrm_pick/row_11_col_5_(2).mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            VSD+CD+LRM (PickScore): 4 steps
+        </h2>
+        </div>
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/vsd+cd+lrm_pick/row_11_col_6.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            VSD+CD+LRM (PickScore): 4 steps
+        </h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/teacher/A_breathtaking_aurora_dances_across_the_night_sky,_vibrant_green_and_purple_hues_illuminating_snow-covered_mountains_and_a_serene_lake.-1.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            Teacher: DDIM 50 steps
+        </h2>
+        </div>
+        <div class="item item-chair-tp">
+          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/teacher/A_breathtaking_aurora_dances_across_the_night_sky,_vibrant_green_and_purple_hues_illuminating_snow-covered_mountains_and_a_serene_lake.-2.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            Teacher: DDIM 50 steps
+        </h2>
+        </div>
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/teacher/A_breathtaking_aurora_dances_across_the_night_sky,_vibrant_green_and_purple_hues_illuminating_snow-covered_mountains_and_a_serene_lake.-3.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            Teacher: DDIM 50 steps
+        </h2>
+        </div>
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation_methods/teacher/A_breathtaking_aurora_dances_across_the_night_sky,_vibrant_green_and_purple_hues_illuminating_snow-covered_mountains_and_a_serene_lake.-4.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            Teacher: DDIM 50 steps
+        </h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/infer_steps/teacher4/row_11_col_0_(1).mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            Teacher: DDIM 4 steps
+        </h2>
+        </div>
+        <div class="item item-chair-tp">
+          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/infer_steps/teacher4/row_11_col_1_(3).mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            Teacher: DDIM 4 steps
+        </h2>
+        </div>
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/infer_steps/teacher4/row_11_col_2_(4).mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            Teacher: DDIM 4 steps
+        </h2>
+        </div>
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/infer_steps/teacher4/row_11_col_3_(4).mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            Teacher: DDIM 4 steps
+        </h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+</body>
+</html>

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ablation Study</title>
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://quantumiracle.github.io/dollar/">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">
+            DOLLAR: Few-Step Video Generation via Distillation and Latent Reward Optimization
+          </h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Ablation Study</h2>
+        <p class="subtitle is-5" style="margin-bottom: 0.5rem;">Sampling Steps</p>
+        <p> we investigate the impact of varying the number of sampling steps during distillation, 
+          specifically testing 1, 2 and 4 steps with variational score distillation (VSD) method, 
+          in comparison with 50-step DDIM sampling for teacher model. The sampled videos are shown below. 
+          Models with more inference steps tend to perform better </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ablation  steps -->
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <h3 class="title is-3">A slow cinematic push in on an ostrich standing in a 1980s kitchen.</h3>
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item">
+          <video poster="" autoplay controls muted loop playsinline height="100%" aria-label="VSD: 4 steps">
+            <source src="./static/videos/infer_steps/teacher/A_slow_cinematic_push_in_on_an_ostrich_standing_in_a_1980s_kitchen.-2.mp4" type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">Teacher: 50 steps</h2>
+        </div>
+        <div class="item">
+          <video poster="" autoplay controls muted loop playsinline height="100%" aria-label="VSD: 4 steps">
+            <source src="./static/videos/infer_steps/4/row_6_col_4_(2).mp4" type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">VSD: 4 step</h2>
+        </div>
+        <div class="item">
+          <video poster="" autoplay controls muted loop playsinline height="100%" aria-label="VSD: 4 steps">
+            <source src="./static/videos/infer_steps/2/row_6_col_3_(2).mp4" type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">VSD: 2 steps</h2>
+        </div>
+        <div class="item">
+          <video poster="" autoplay controls muted loop playsinline height="100%" aria-label="VSD: 4 steps">
+            <source src="./static/videos/infer_steps/1/row_6_col_4_(3).mp4" type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">VSD: 1 step</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <h3 class="title is-3">An astronaut running through an alley in Rio de Janeiro.      </h3>
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item">
+          <video poster="" autoplay controls muted loop playsinline height="100%" aria-label="VSD: 4 steps">
+            <source src="./static/videos/infer_steps/teacher/An_astronaut_running_through_an_alley_in_Rio_de_Janeiro.-4.mp4" type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">Teacher: 50 steps</h2>
+        </div>
+        <div class="item">
+          <video poster="" autoplay controls muted loop playsinline height="100%" aria-label="VSD: 4 steps">
+            <source src="./static/videos/infer_steps/4/row_3_col_0_(1).mp4" type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">VSD: 4 step</h2>
+        </div>
+        <div class="item">
+          <video poster="" autoplay controls muted loop playsinline height="100%" aria-label="VSD: 4 steps">
+            <source src="./static/videos/infer_steps/2/row_3_col_3.mp4" type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">VSD: 2 steps</h2>
+        </div>
+        <div class="item">
+          <video poster="" autoplay controls muted loop playsinline height="100%" aria-label="VSD: 4 steps">
+            <source src="./static/videos/infer_steps/1/row_3_col_2_(1).mp4" type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">VSD: 1 step</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <h3 class="title is-3">FPV moving through a forest to an abandoned house to ocean waves.      </h3>
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item">
+          <video poster="" autoplay controls muted loop playsinline height="100%" aria-label="VSD: 4 steps">
+            <source src="./static/videos/infer_steps/teacher/FPV_moving_through_a_forest_to_an_abandoned_house_to_ocean_waves.-0.mp4" type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">Teacher: 50 steps</h2>
+        </div>
+        <div class="item">
+          <video poster="" autoplay controls muted loop playsinline height="100%" aria-label="VSD: 4 steps">
+            <source src="./static/videos/infer_steps/4/row_4_col_2.mp4" type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">VSD: 4 step</h2>
+        </div>
+        <div class="item">
+          <video poster="" autoplay controls muted loop playsinline height="100%" aria-label="VSD: 4 steps">
+            <source src="./static/videos/infer_steps/2/row_4_col_2_(1).mp4" type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">VSD: 2 steps</h2>
+        </div>
+        <div class="item">
+          <video poster="" autoplay controls muted loop playsinline height="100%" aria-label="VSD: 4 steps">
+            <source src="./static/videos/infer_steps/1/row_4_col_0.mp4" type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">VSD: 1 step</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <h3 class="title is-3">An older man playing piano, lit from the side.      </h3>
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item">
+          <video poster="" autoplay controls muted loop playsinline height="100%" aria-label="VSD: 4 steps">
+            <source src="./static/videos/infer_steps/teacher/An_older_man_playing_piano,_lit_from_the_side.-1.mp4" type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">Teacher: 50 steps</h2>
+        </div>
+        <div class="item">
+          <video poster="" autoplay controls muted loop playsinline height="100%" aria-label="VSD: 4 steps">
+            <source src="./static/videos/infer_steps/4/row_5_col_2_(1).mp4" type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">VSD: 4 step</h2>
+        </div>
+        <div class="item">
+          <video poster="" autoplay controls muted loop playsinline height="100%" aria-label="VSD: 4 steps">
+            <source src="./static/videos/infer_steps/2/row_5_col_5_(1).mp4" type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">VSD: 2 steps</h2>
+        </div>
+        <div class="item">
+          <video poster="" autoplay controls muted loop playsinline height="100%" aria-label="VSD: 4 steps">
+            <source src="./static/videos/infer_steps/1/row_5_col_5.mp4" type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">VSD: 1 step</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <h3 class="title is-3">A middle-aged sad bald man becomes happy as a wig of curly hair and sunglasses fall suddenly on his head.      </h3>
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item">
+          <video poster="" autoplay controls muted loop playsinline height="100%" aria-label="VSD: 4 steps">
+            <source src="./static/videos/infer_steps/teacher/A_middle-aged_sad_bald_man_becomes_happy_as_a_wig_of_curly_hair_and_sunglasses_fall_suddenly_on_his_head.-0.mp4" type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">Teacher: 50 steps</h2>
+        </div>
+        <div class="item">
+          <video poster="" autoplay controls muted loop playsinline height="100%" aria-label="VSD: 4 steps">
+            <source src="./static/videos/infer_steps/4/row_7_col_0_(2).mp4" type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">VSD: 4 step</h2>
+        </div>
+        <div class="item">
+          <video poster="" autoplay controls muted loop playsinline height="100%" aria-label="VSD: 4 steps">
+            <source src="./static/videos/infer_steps/2/row_7_col_2_(3).mp4" type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">VSD: 2 steps</h2>
+        </div>
+        <div class="item">
+          <video poster="" autoplay controls muted loop playsinline height="100%" aria-label="VSD: 4 steps">
+            <source src="./static/videos/infer_steps/1/row_7_col_1_(2).mp4" type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">VSD: 1 step</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+</body>
+</html>
